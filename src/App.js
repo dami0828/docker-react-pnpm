@@ -1,13 +1,13 @@
-import logo from "./logo.svg";
-import "./App.css";
+import styles from "./App.module.css";
+import TodoList from "./components/TodoList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        Docker React
-      </header>
+    <div className={styles.container}>
+      <section className={styles.todoContainer}>
+        <h1 className={styles.title}>오늘의 할일</h1>
+        <TodoList />
+      </section>
     </div>
   );
 }

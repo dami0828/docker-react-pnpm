@@ -4,15 +4,17 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 COPY . /usr/src/app
 WORKDIR /usr/src/app
-
+# prod-deps 는 프로덕션 환경을 위한 필수 의존성만을 설치
 FROM base AS prod-deps
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
+# 모든 의존성을 설치한 후 애플리케이션을 빌드
 FROM base AS build
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 RUN pnpm run build
 
 FROM base
 COPY --from=prod-deps /usr/src/app/node_modules /usr/src/app/node_modules
+
 EXPOSE 8000
 CMD [ "pnpm", "start"]

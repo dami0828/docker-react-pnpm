@@ -1,0 +1,25 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+.todoDeleteButton {
+  padding: 5px;
+  color: indianred;
+  cursor: pointer;
+}
+.todoForm {
+  display: flex;
+  margin-top: 50px;
+}
+.todoTextInput {
+  flex: 1;
+  padding: 5px;
+}
+.todoCreateButton {
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  background-color: rebeccapurple;
+}
