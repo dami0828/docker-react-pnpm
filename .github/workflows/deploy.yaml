@@ -30,6 +30,6 @@ jobs:
           application_name: docker-react-pnpm
           environment_name: Docker-react-pnpm-env
           existing_bucket_name: elasticbeanstalk-ap-northeast-2-590183869725
-          region: ap-southeast-2
+          region: ap-northeast-2
           version_label: ${{ github.sha }}
           deployment_package: deploy.zip
