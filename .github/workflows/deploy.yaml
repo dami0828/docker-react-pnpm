@@ -15,7 +15,7 @@ jobs:
       # 2. 도커 이미지를 빌드한다
       - run: docker build -t damlee/react-test -f Dockerfile.dev .
       # 3. 이미지를 이용해서 컨테이너를 실행하고 test를 진행한다.
-      - run: docker run -e CI=true damlee/react-test npm test
+      - run: docker run -e CI=true damlee/react-test pnpm run test
 
       # 4. EB에 보낼 파일들을 압축한다.
       - name: Generate deployment package
